@@ -126,7 +126,8 @@ public class Main{
 	}
 
 	//Incomplete
-	public void searchProjectsAfterDate() {
+	public void searchProjectsAfterDate()throws ParseException {
+		String msg;
 		System.out.println("Enter date");
 
 		System.out.println("Enter year:");
@@ -143,13 +144,22 @@ public class Main{
 
 		System.out.println(convDateFormat(date));
 
-		controller.searchProjectsAfterDate(date);
+		msg= controller.searchProjectsAfterDate(date);
+
+		if (msg.equals("")){
+			System.out.println("no projects finish after that date");
+		}
+		else{
+			System.out.println(msg);
+		}
 
 	}
 	
 	//Incomplete
 	public void searchProjectsBeforeDate() throws ParseException {
 
+		String msg;
+
 		System.out.println("Enter date");
 
 		System.out.println("Enter year:");
@@ -166,7 +176,14 @@ public class Main{
 
 		System.out.println(convDateFormat(date));
 
-		System.out.println(controller.searchProjectsBeforeDate(date));
+		msg=controller.searchProjectsBeforeDate(date);
+		if (msg.equals("")){
+			System.out.println("no projects start before that date");
+		}
+		else{
+			System.out.println(msg);
+
+		}
 		
 
 

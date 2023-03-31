@@ -50,11 +50,11 @@ public class Controller {
 	// case 2
 	//Incomplete
 	// Date class also has their own before() and after() method
-	public String searchProjectsAfterDate(Calendar date) {
+	public String searchProjectsAfterDate(Calendar date) throws ParseException {
 		String msg = "";
 		for(int i=0 ;i<SIZE ;i++){
-			if(projects[i].getInitialDate().compareTo(date)>0){
-
+			if(projects[i]!=null&&projects[i].getFinalDate().compareTo(date)>0){
+				msg += projects[i].getProjectInfo(); 
 
 			}
 
@@ -74,7 +74,7 @@ public class Controller {
 
 		String msg = "";
 		for(int i=0 ;i<SIZE  ;i++){
-			if( projects[i]!=null && projects[i].getFinalDate().compareTo(date)<0 ) {
+			if( projects[i]!=null && projects[i].getInitialDate().compareTo(date)<0 ) {
 				msg += projects[i].getProjectInfo(); 
 			
 			}
