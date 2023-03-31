@@ -86,10 +86,22 @@ public class Main{
 		months= input.nextInt();
 
 		finalDate = calculateFinalDate(initialDate, months);
-		// change date format to print 
-		String formatfinalDate = simpleDateFormat.format(finalDate.getTime()) ;
-		System.out.println(formatfinalDate);
 
+		System.out.println(convDateFormat(finalDate));
+
+		System.out.println("Enter budget");
+		budget = input.nextDouble();
+
+		registerProjectComplete =controller.registerProject(name, clientName, initialDate, finalDate, budget);
+		if (registerProjectComplete){
+			System.out.println("The project has been registered");
+		}
+
+		else{
+			System.out.println("The project has not been registered");
+		}
+	}
+	
 /*
 	SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         String fechaFormateada = formatoFecha.format(fecha.getTime());
@@ -108,20 +120,11 @@ public class Main{
         Calendar fecha = Calendar.getInstance();
         fecha.set(anio, mes, dia); */
 		
+	public String convDateFormat(Calendar date){
 
-		System.out.println("Enter budget");
-		budget = input.nextDouble();
+		String formatDate = simpleDateFormat.format(date.getTime()) ;
+		return formatDate;
 
-		registerProjectComplete =controller.registerProject(name, clientName, initialDate, finalDate, budget);
-		if (registerProjectComplete){
-			System.out.println("The project has been registered");
-			System.out.println(initialDate);
-			System.out.println(finalDate);
-		}
-
-		else{
-			System.out.println("The project has not been registered");
-		}
 	}
 
 	public Calendar calculateFinalDate(Calendar initialDate, int months){
