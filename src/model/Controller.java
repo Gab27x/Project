@@ -53,15 +53,15 @@ public class Controller {
 	// Date class also has their own before() and after() method
 	public String searchProjectsAfterDate(Calendar date) {
 		String msg = "";
-
 		for(int i=0 ;i<SIZE ;i++){
-			if(){
+			if(projects[i].getInitialDate().compareTo(date)<0){
 
 
 			}
 
 
 		}
+
 
 		return msg;
 
@@ -71,10 +71,17 @@ public class Controller {
 	//case 3
 	//Incomplete
 	// Date class also has their own before() and after() method
-	public String searchProjectsBeforeDate() {
+	public String searchProjectsBeforeDate(Calendar date) {
 
 		String msg = "";
+		for(int i=0 ;i<SIZE ;i++){
+			if(projects[i].getFinalDate().compareTo(date)>0){
 
+
+			}
+
+
+		}
 		return msg;
 
 	}

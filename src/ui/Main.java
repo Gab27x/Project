@@ -141,12 +141,32 @@ public class Main{
 
 		System.out.println(convDateFormat(date));
 
-		//controller.searchProjectsAfterDate(date);
+		controller.searchProjectsAfterDate(date);
 
 	}
 	
 	//Incomplete
 	public void searchProjectsBeforeDate() {
+
+		System.out.println("Enter date");
+
+		System.out.println("Enter year:");
+        int year = input.nextInt();
+        
+        System.out.println("Enter el month (1-12):");
+        int month = input.nextInt() - 1; 
+        
+        System.out.println("Enter day of the month:");
+        int day = input.nextInt();
+        
+        Calendar date= Calendar.getInstance();
+        date.set(year, month, day); 
+
+		System.out.println(convDateFormat(date));
+
+		controller.searchProjectsBeforeDate(date);
+
+
 
 	}
 }
