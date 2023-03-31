@@ -3,6 +3,8 @@ package ui;
 import java.util.Calendar;
 import java.util.Scanner;
 import model.Controller;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 
@@ -26,7 +28,7 @@ public class Main{
 		simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException{
 
 		Main view = new Main();
 		int option = 0;
@@ -49,7 +51,7 @@ public class Main{
 
 	}
 
-	public void executeOption(int option){
+	public void executeOption(int option)throws ParseException{
 		switch(option){
 			case 0:
 			System.out.println("Exit");
@@ -146,7 +148,7 @@ public class Main{
 	}
 	
 	//Incomplete
-	public void searchProjectsBeforeDate() {
+	public void searchProjectsBeforeDate() throws ParseException {
 
 		System.out.println("Enter date");
 
@@ -164,7 +166,8 @@ public class Main{
 
 		System.out.println(convDateFormat(date));
 
-		controller.searchProjectsBeforeDate(date);
+		System.out.println(controller.searchProjectsBeforeDate(date));
+		
 
 
 

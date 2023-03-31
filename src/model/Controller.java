@@ -1,13 +1,12 @@
 package model;
 
+import java.text.ParseException;
 import java.util.Calendar;
 
 
 public class Controller {
 	public static final int SIZE = 10;
 	private Project[] projects;
-	private Calendar calendar;
-
 	public Controller() {
 
 		projects = new Project[SIZE];
@@ -54,7 +53,7 @@ public class Controller {
 	public String searchProjectsAfterDate(Calendar date) {
 		String msg = "";
 		for(int i=0 ;i<SIZE ;i++){
-			if(projects[i].getInitialDate().compareTo(date)<0){
+			if(projects[i].getInitialDate().compareTo(date)>0){
 
 
 			}
@@ -71,13 +70,13 @@ public class Controller {
 	//case 3
 	//Incomplete
 	// Date class also has their own before() and after() method
-	public String searchProjectsBeforeDate(Calendar date) {
+	public String searchProjectsBeforeDate(Calendar date) throws ParseException{
 
 		String msg = "";
-		for(int i=0 ;i<SIZE ;i++){
-			if(projects[i].getFinalDate().compareTo(date)>0){
-
-
+		for(int i=0 ;i<SIZE  ;i++){
+			if( projects[i]!=null && projects[i].getFinalDate().compareTo(date)<0 ) {
+				msg += projects[i].getProjectInfo(); 
+			
 			}
 
 
