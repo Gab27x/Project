@@ -6,6 +6,7 @@ import java.util.Calendar;
 public class Controller {
 	public static final int SIZE = 10;
 	private Project[] projects;
+	private Calendar calendar;
 
 	public Controller() {
 
@@ -50,9 +51,17 @@ public class Controller {
 	// case 2
 	//Incomplete
 	// Date class also has their own before() and after() method
-	public String searchProjectsAfterDate() {
-
+	public String searchProjectsAfterDate(Calendar date) {
 		String msg = "";
+
+		for(int i=0 ;i<SIZE ;i++){
+			if(){
+
+
+			}
+
+
+		}
 
 		return msg;
 

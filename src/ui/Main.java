@@ -3,8 +3,8 @@ package ui;
 import java.util.Calendar;
 import java.util.Scanner;
 import model.Controller;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+
 
 /*El usuario debe poder registrar hasta 10 proyectos. 
 En Green al aceptar un proyecto de un cliente se debe registrar el
@@ -42,9 +42,9 @@ public class Main{
 	// Incomplete
 	public void menu() {
 		System.out.println("0.Exit");
-		System.out.println("1 RegisterProject.");
-		System.out.println("2. search Projects After Date");
-		System.out.println("3. search Projects Before Date");
+		System.out.println("1. RegisterProject.");
+		System.out.println("2. Search Projects After Date");
+		System.out.println("3. Search Projects Before Date");
 		
 
 	}
@@ -102,31 +102,19 @@ public class Main{
 		}
 	}
 	
-/*
-	SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-        String fechaFormateada = formatoFecha.format(fecha.getTime());
-*/
 
 /*      pedir fecha 
-	System.out.println("Ingrese el ao:");
-        int anio = scanner.nextInt();
-        
-        System.out.println("Ingrese el mes (1-12):");
-        int mes = scanner.nextInt() - 1; // Restar 1 al mes porque los meses en la clase Calendar comienzan en 0
-        
-        System.out.println("Ingrese el dia del mes:");
-        int dia = scanner.nextInt();
-        
-        Calendar fecha = Calendar.getInstance();
-        fecha.set(anio, mes, dia); */
+
+	*/
 		
+	// change formate of the date 
 	public String convDateFormat(Calendar date){
 
 		String formatDate = simpleDateFormat.format(date.getTime()) ;
 		return formatDate;
 
 	}
-
+	// set months 
 	public Calendar calculateFinalDate(Calendar initialDate, int months){
 		
 		initialDate.add(Calendar.MONTH, months); 
@@ -137,6 +125,23 @@ public class Main{
 
 	//Incomplete
 	public void searchProjectsAfterDate() {
+		System.out.println("Enter date");
+
+		System.out.println("Enter year:");
+        int year = input.nextInt();
+        
+        System.out.println("Enter el month (1-12):");
+        int month = input.nextInt() - 1; 
+        
+        System.out.println("Enter day of the month:");
+        int day = input.nextInt();
+        
+        Calendar date= Calendar.getInstance();
+        date.set(year, month, day); 
+
+		System.out.println(convDateFormat(date));
+
+		//controller.searchProjectsAfterDate(date);
 
 	}
 	

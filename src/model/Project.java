@@ -8,7 +8,7 @@ import java.text.ParseException;
 
 
 public class Project{
-	
+	// missing type
 	private String name;
 	private String clientName;
 	private Calendar initialDate;
@@ -60,6 +60,11 @@ public class Project{
 		return "\nName: " + name + "\nClient: " + clientName + "\nInitial Date: " + getInitialDateFormated() + 
 		"\nFinal Date: " + getFinalDateFormated() + "\nTotalBudget: " + budget + ".\n";
 	}
+
+
+
+
+	
 }
 
 
