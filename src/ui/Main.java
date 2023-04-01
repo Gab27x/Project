@@ -3,7 +3,6 @@ package ui;
 import java.util.Calendar;
 import java.util.Scanner;
 import model.Controller;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -45,8 +44,8 @@ public class Main{
 	public void menu() {
 		System.out.println("0.Exit");
 		System.out.println("1. RegisterProject.");
-		System.out.println("2. Search Projects After Date");
-		System.out.println("3. Search Projects Before Date");
+		System.out.println("2. Consult projects that start after a date");
+		System.out.println("3. Consult projects that end before a date:");
 		
 
 	}
@@ -73,21 +72,22 @@ public class Main{
 		String name = "";
 		String clientName = "";
 		Calendar initialDate = Calendar.getInstance();
+		Calendar finalDate= Calendar.getInstance();
 
-		Calendar finalDate; 
 		double budget;
 		boolean registerProjectComplete;
 		int months = 0;
 
 		System.out.println("Enter name");
 		name=input.next();
+
 		System.out.println("Enter clientName");
 		clientName = input.next();
 
 		System.out.println("Enter how many months the project will last");
 		months= input.nextInt();
 
-		finalDate = calculateFinalDate(initialDate, months);
+		finalDate = calculateFinalDate(finalDate, months);
 
 		System.out.println(convDateFormat(finalDate));
 
@@ -104,10 +104,6 @@ public class Main{
 		}
 	}
 	
-
-/*      pedir fecha 
-
-	*/
 		
 	// change formate of the date 
 	public String convDateFormat(Calendar date){
@@ -117,11 +113,11 @@ public class Main{
 
 	}
 	// set months 
-	public Calendar calculateFinalDate(Calendar initialDate, int months){
+	public Calendar calculateFinalDate(Calendar finalDate, int months){
 		
-		initialDate.add(Calendar.MONTH, months); 
+		finalDate.add(Calendar.MONTH, months); 
 
-		return initialDate;
+		return finalDate;
 
 	}
 

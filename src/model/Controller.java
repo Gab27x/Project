@@ -14,7 +14,7 @@ public class Controller {
 	}
 	
 	// case 1
-	//Incomplete
+
 	public boolean registerProject( String name, String clientName, Calendar initialDate, Calendar finalDate, double budget) {
 		boolean registerProjectComplete = false;
 		int pos = posAvailable();
@@ -48,7 +48,7 @@ public class Controller {
 
 
 	// case 2
-	//Incomplete
+
 	// Date class also has their own before() and after() method
 	public String searchProjectsAfterDate(Calendar date) throws ParseException {
 		String msg = "";
@@ -68,7 +68,7 @@ public class Controller {
 
 
 	//case 3
-	//Incomplete
+
 	// Date class also has their own before() and after() method
 	public String searchProjectsBeforeDate(Calendar date) throws ParseException{
 
