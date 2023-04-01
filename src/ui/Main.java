@@ -73,7 +73,7 @@ public class Main{
 		String clientName = "";
 		Calendar initialDate = Calendar.getInstance();
 		Calendar finalDate= Calendar.getInstance();
-
+		String projectType;
 		double budget;
 		boolean registerProjectComplete;
 		int months = 0;
@@ -83,6 +83,9 @@ public class Main{
 
 		System.out.println("Enter clientName");
 		clientName = input.next();
+
+		System.out.println("Enter project type");
+		projectType =input.next();
 
 		System.out.println("Enter how many months the project will last");
 		months= input.nextInt();
@@ -94,7 +97,7 @@ public class Main{
 		System.out.println("Enter budget");
 		budget = input.nextDouble();
 
-		registerProjectComplete =controller.registerProject(name, clientName, initialDate, finalDate, budget);
+		registerProjectComplete =controller.registerProject(name, clientName,projectType, initialDate, finalDate, budget);
 		if (registerProjectComplete){
 			System.out.println("The project has been registered");
 		}

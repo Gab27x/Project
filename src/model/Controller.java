@@ -15,11 +15,11 @@ public class Controller {
 	
 	// case 1
 
-	public boolean registerProject( String name, String clientName, Calendar initialDate, Calendar finalDate, double budget) {
+	public boolean registerProject( String name, String clientName,String projectType, Calendar initialDate, Calendar finalDate, double budget) {
 		boolean registerProjectComplete = false;
 		int pos = posAvailable();
 		if(pos != -1){
-			projects[pos] = new Project(name, clientName, initialDate, finalDate, budget) ;
+			projects[pos] = new Project(name, clientName,projectType, initialDate, finalDate, budget) ;
 			
 			registerProjectComplete = true;
 		}
