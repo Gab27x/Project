@@ -44,8 +44,8 @@ public class Main{
 	public void menu() {
 		System.out.println("0.Exit");
 		System.out.println("1. RegisterProject.");
-		System.out.println("2. Consult projects that start after a date");
-		System.out.println("3. Consult projects that end before a date:");
+		System.out.println("2. Consult projects that end after a date");
+		System.out.println("3. Consult projects that start before a date:");
 		
 
 	}
@@ -121,7 +121,8 @@ public class Main{
 
 	}
 
-	//Incomplete
+	// Case 2
+
 	public void searchProjectsAfterDate()throws ParseException {
 		String msg;
 		System.out.println("Enter date");
@@ -151,7 +152,7 @@ public class Main{
 
 	}
 	
-	//Incomplete
+	// Case 3
 	public void searchProjectsBeforeDate() throws ParseException {
 
 		String msg;
